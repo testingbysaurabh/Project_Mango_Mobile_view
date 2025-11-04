@@ -1,7 +1,6 @@
-import React, { createContext, useContext, useState } from 'react'
+import React, { useState } from 'react'
+import { GlobalContext } from './context'
 
-
-export const GlobalContext = createContext()
 export const MyContext = ({ children }) => {
     const [ui, setUi] = useState(0);
     const [isLoading, setIsLoading] = useState(false);
@@ -18,8 +17,4 @@ export const MyContext = ({ children }) => {
             {children}
         </GlobalContext.Provider>
     )
-}
-
-export const useGlobalContext = () => {
-    return useContext(GlobalContext);
 }
